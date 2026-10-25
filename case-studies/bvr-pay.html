@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BVR Pay: 93% payment conversion at 10k+ users · Illia Ladyha</title>
-  <meta name="description" content="Integrating BVR Pay into Silpo's e-commerce and raising successful payment conversion to 93%.">
+  <meta name="description" content="Integrating BVR Pay into Silpo's e-commerce and raising successful payment conversion from 88% to 93%.">
   <meta property="og:type" content="article">
   <meta property="og:title" content="BVR Pay: 93% payment conversion at 10k+ users · Illia Ladyha">
-  <meta property="og:description" content="Integrating BVR Pay into Silpo's e-commerce and raising successful payment conversion to 93%.">
+  <meta property="og:description" content="Integrating BVR Pay into Silpo's e-commerce and raising successful payment conversion from 88% to 93%.">
   <meta property="og:image" content="https://faceless121212.github.io/Portfolio/assets/cover-payments.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://faceless121212.github.io/Portfolio/case-studies/bvr-pay.html">
@@ -51,38 +51,38 @@
     <div class="cs-cover" style="margin-top:32px"><img src="../assets/cover-payments.webp" alt="A glossy 3D payment card with a checkmark badge" width="1200" height="675"></div>
     <section class="tldr" aria-labelledby="tldr-title">
       <h2 id="tldr-title">TL;DR</h2>
-      <dl><dt>Problem</dt><dd>The bank's payment product needed to work inside <a class="ext" href="https://fozzy.ua/en/retail_chains/silpo/" target="_blank" rel="noopener noreferrer">Silpo</a>'s e-commerce checkout, where every failed payment is a lost order. <span class="ph">[Add: specific problem]</span></dd></dl>
+      <dl><dt>Problem</dt><dd>The bank's own payment method had to work inside <a class="ext" href="https://fozzy.ua/en/retail_chains/silpo/" target="_blank" rel="noopener noreferrer">Silpo</a>'s e-commerce checkout, where every failed payment is a lost order.</dd></dl>
       <dl><dt>My role</dt><dd>Product Owner of BVR Pay. Worked with the CPO on digital payments, loyalty integration and new product experiments.</dd></dl>
-      <dl><dt>Team</dt><dd><span class="ph">[Add: team size and composition]</span></dd></dl>
-      <dl><dt>Outcome</dt><dd>BVR Pay integrated into Silpo's e-commerce, serving 10,000+ users. Successful payment conversion reached 93% (+5%).</dd></dl>
+      <dl><dt>Team</dt><dd>Cross-company: the bank's product team, Silpo's e-commerce team and the CPO.</dd></dl>
+      <dl><dt>Outcome</dt><dd>BVR Pay live in Silpo e-commerce for 10,000+ users. Successful payment conversion went from 88% to 93% (+5 points).</dd></dl>
     </section>
     <section class="cs-section">
       <h2>Context and why it mattered</h2>
-      <p>Bank Vlasnyi Rahunok is part of Fozzy Group, which also runs the Silpo retail chain. A native payment method in Silpo's e-commerce connects the bank, the retailer's checkout and the loyalty programme. <span class="ph">[Add: strategic goal of the integration]</span></p>
+      <p>Bank Vlasnyi Rahunok and the Silpo retail chain are both part of Fozzy Group. A native payment method in Silpo's online store served three goals at once:</p><ul><li><strong>Grow bank customers</strong> by reaching Silpo's shoppers.</li><li><strong>Ecosystem loyalty:</strong> tie payments to Silpo's loyalty programme.</li><li><strong>Payment revenue:</strong> keep transaction revenue inside the group instead of paying external acquirers.</li></ul>
     </section>
     <section class="cs-section">
       <h2>Discovery and data</h2>
-      <p>I mapped the payment flow end to end, from checkout to confirmation, and tracked where payments failed or were abandoned.</p>
-<ul><li>Main failure points: <span class="ph">[Add: e.g. 3DS, declines, timeouts]</span></li><li>Baseline conversion: 88% (93% minus the +5% gain) <span class="ph">[Add: confirm the baseline]</span></li></ul>
+      <p>I broke failed payments down by reason code instead of looking at one overall success rate. Failures fell into three groups:</p><ul><li><strong>Bank declines:</strong> insufficient funds, limits and antifraud rules.</li><li><strong>Technical errors:</strong> timeouts and integration failures between Silpo and the bank.</li><li><strong>Checkout UX:</strong> confusing choices and extra steps.</li></ul>
     </section>
     <section class="cs-section">
       <h2>Hypotheses and prioritization</h2>
-      <p><span class="ph">[Add: hypotheses]</span></p><p><strong>What I said no to:</strong> <span class="ph">[Add: deprioritized scope]</span></p>
+      <p><strong>Hypothesis:</strong> most technical failures and some declines can be recovered if the integration is more reliable and users get a clear error with an easy retry.</p>
+<p><strong>What I said no to:</strong></p><ul><li><strong>New payment methods</strong> before the existing flow converted well.</li><li><strong>Custom UI per partner:</strong> one standard flow instead of bespoke builds.</li><li><strong>A big-bang launch:</strong> we rolled out in phases so problems showed up early and at small scale.</li></ul>
     </section>
     <section class="cs-section">
       <h2>Experiments and execution</h2>
-      <ul><li>Integration of BVR Pay into Silpo e-commerce <span class="ph">[Add: key milestones]</span></li><li>Loyalty integration with the CPO <span class="ph">[Add: details]</span></li><li><span class="ph">[Add: payment flow improvements that drove +5%]</span></li></ul>
+      <ul><li><strong>Integration fixes</strong> with Silpo's team for timeouts and API errors.</li><li><strong>Error handling and retry:</strong> clear messages for each failure reason and a one-tap retry, so a recoverable failure didn't turn into a lost order.</li><li><strong>Phased rollout</strong> to Silpo e-commerce customers, then loyalty integration with the CPO.</li></ul>
     </section>
     <section class="cs-section">
-      <h2>Results vs. goals</h2>
-      <div class="table-scroll"><table class="results"><thead><tr><th>Metric</th><th>Result</th><th>Goal</th></tr></thead><tbody>
-<tr><td>Successful payment conversion</td><td>93% (+5%)</td><td><span class="ph">[Add: goal]</span></td></tr>
-<tr><td>Users served</td><td>10,000+</td><td><span class="ph">[Add: goal]</span></td></tr>
+      <h2>Results</h2>
+      <div class="table-scroll"><table class="results"><thead><tr><th>Metric</th><th>Before</th><th>After</th></tr></thead><tbody>
+<tr><td>Successful payment conversion</td><td>88%</td><td><strong>93% (+5 points)</strong></td></tr>
+<tr><td>Users served</td><td>—</td><td><strong>10,000+</strong></td></tr>
 </tbody></table></div>
     </section>
     <section class="cs-section">
       <h2>What I learned</h2>
-      <p><span class="ph">[Add: lessons]</span></p>
+      <p><strong>Measure every failure code.</strong> A single success rate hides the problem. Breaking failures down by reason showed which ones were fixable, and that's where the +5 points came from.</p>
     </section>
     <a class="next-case" href="banking-onboarding.html"><small>Next case study</small><span>Fixing mobile banking onboarding step by step: +5% registrations →</span></a>
   </div>

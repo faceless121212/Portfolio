@@ -51,37 +51,35 @@
     <div class="cs-cover" style="margin-top:32px"><img src="../assets/cover-nativness.webp" alt="A vault with a coin in its slot and a padlock" width="1200" height="675"></div>
     <section class="tldr" aria-labelledby="tldr-title">
       <h2 id="tldr-title">TL;DR</h2>
-      <dl><dt>Problem</dt><dd>Affiliates promote offers on a promise. Advertisers can pay late, or not at all. Trust is the bottleneck of affiliate marketing.</dd></dl>
-      <dl><dt>My role</dt><dd>Scoped the product through locked decision tables, wrote the design specs, set the brand system, and built the prototype.</dd></dl>
+      <dl><dt>Problem</dt><dd>Affiliates promote offers on a promise, and advertisers can pay late or not at all. Trust is the bottleneck of affiliate marketing.</dd></dl>
+      <dl><dt>My role</dt><dd>Scoped the product through locked decision tables, wrote the design specs, set the brand system and built the prototype.</dd></dl>
       <dl><dt>Team</dt><dd>Solo, with AI.</dd></dl>
-      <dl><dt>Outcome</dt><dd>A live prototype with wallet login (Solana and Ethereum), offers, tracking links, simulated conversions and payouts, plus a landing page and blog. <span class="ph">[Add: validation: affiliates or advertisers you spoke to, and what they said]</span></dd></dl>
+      <dl><dt>Outcome</dt><dd>A live prototype with wallet login (Solana and Ethereum), offers, tracking links, simulated conversions and payouts. Conversations with affiliates confirmed the payout-trust problem.</dd></dl>
     </section>
     <section class="cs-section">
       <h2>Context and why it mattered</h2>
-      <p>The core idea: lock the commission budget in escrow <em>before</em> the offer goes live, so affiliates see a guaranteed balance instead of a promise. A confirmed conversion releases payment to the affiliate's wallet. One wallet login works for both sides. <span class="ph">[Add: where the idea came from]</span></p>
+      <p>Nativness applies on-chain escrow to a growth-marketing problem. The commission budget is locked <em>before</em> the offer goes live, so affiliates see a guaranteed balance instead of a promise. A confirmed conversion releases payment to the affiliate's wallet, and one wallet login works for both sides.</p>
     </section>
     <section class="cs-section">
       <h2>Discovery and data</h2>
-      <p>I took design tokens from the actual reference apps (Jupiter, Velocity and Tensor), sampled live rather than from memory. Proof points on the landing page are qualitative only, apart from market figures shown with their sources. <span class="ph">[Add: market research and target segment]</span></p>
+      <p>I talked to affiliates, and they confirmed the pain: payouts arrive late or never, and nobody can see whether an advertiser can actually pay. For the brand, I sampled design tokens from the real reference apps (Jupiter, Velocity and Tensor) rather than from memory. Proof points on the landing page are qualitative only, apart from market figures shown with their sources.</p>
     </section>
     <section class="cs-section">
       <h2>Hypotheses and prioritization</h2>
-      <p><span class="ph">[Add: hypothesis, e.g. 'guaranteed escrow balance increases affiliate sign-up for new advertisers']</span></p>
-<p><strong>What I said no to:</strong> fraud and attribution logic in v1 (I designed where it would plug in, but didn't build it), email and password accounts (the wallet is the account), and a role toggle (both sides are simply destinations in the navigation). I split Phase 2 into five subsystems and put the data layer first, because one spec covering everything would be one nobody could implement.</p>
+      <p><strong>Hypothesis:</strong> a visible, guaranteed escrow balance makes affiliates willing to promote offers from advertisers they've never worked with.</p>
+<p><strong>What I said no to:</strong> fraud and attribution logic in v1 (I designed where it would plug in, but didn't build it), email and password accounts (the wallet is the account), and a role toggle (both sides are simply destinations in the navigation). I also split Phase 2 into five subsystems with the data layer first, because one spec covering everything would be one nobody could implement.</p>
     </section>
     <section class="cs-section">
       <h2>Experiments and execution</h2>
-      <ul><li><strong>Phase 1:</strong> landing page, wallet login and the marketplace, frontend only, with a repository layer so storage could be swapped later.</li>
-<li><strong>Phase 2a design:</strong> Postgres and an API, Sign-in with Solana (nonce, signature, short-lived session), money stored in integer cents, and idempotency keys on conversions.</li>
-<li><strong>Honesty:</strong> I keep a public record of what is real (wallet address discovery) and what is simulated (escrow balances, conversions, listed offers).</li></ul>
+      <ul><li><strong>Phase 1:</strong> landing page, wallet login and the marketplace, frontend only, with a repository layer so storage could be swapped later.</li><li><strong>Phase 2a design:</strong> Postgres and an API, Sign-in with Solana (nonce, signature, short-lived session), money stored in integer cents, and idempotency keys on conversions.</li><li><strong>Honesty:</strong> a public record of what is real (wallet address discovery) and what is simulated (escrow balances, conversions, listed offers).</li></ul>
     </section>
     <section class="cs-section">
-      <h2>Results vs. goals</h2>
-      <p><span class="ph">[Add: results or validation signals; if none yet, say 'prototype, not yet validated with users']</span></p>
+      <h2>Results</h2>
+      <p>Prototype stage: the problem is validated in conversations with affiliates, and the product is not yet validated with real money.</p>
     </section>
     <section class="cs-section">
       <h2>What I learned</h2>
-      <p><span class="ph">[Add: lessons]</span></p>
+      <p>Decompose before you build. Splitting Phase 2 into five independent subsystems turned an unshippable spec into a clear order of work. And in a trust product, being honest about what's simulated is part of the product.</p>
     </section>
     <a class="next-case" href="linkit.html"><small>Next case study</small><span>Linkit: replacing a content spreadsheet with a planning app →</span></a>
   </div>

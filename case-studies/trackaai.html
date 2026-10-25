@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>TrackaAI: a Linear-style tracker with AI teammates · Illia Ladyha</title>
-  <meta name="description" content="Product requirements, plan design and AI features for TrackaAI, an issue tracker where AI writes, breaks down and picks up issues.">
+  <meta name="description" content="PRD, pricing and AI feature design for TrackaAI, an issue tracker where AI writes, breaks down and picks up issues.">
   <meta property="og:type" content="article">
   <meta property="og:title" content="TrackaAI: a Linear-style tracker with AI teammates · Illia Ladyha">
-  <meta property="og:description" content="Product requirements, plan design and AI features for TrackaAI, an issue tracker where AI writes, breaks down and picks up issues.">
+  <meta property="og:description" content="PRD, pricing and AI feature design for TrackaAI, an issue tracker where AI writes, breaks down and picks up issues.">
   <meta property="og:image" content="https://faceless121212.github.io/Portfolio/assets/cover-trackaai.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://faceless121212.github.io/Portfolio/case-studies/trackaai.html">
@@ -40,7 +40,7 @@
       <span class="eyebrow">Side project</span>
       <h1>TrackaAI: a Linear-style tracker with AI teammates</h1>
       <ul class="cs-meta">
-        <li><strong>Links</strong>Side project · <a class="ext" href="https://github.com/faceless121212/TrackaAI" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><strong>Links</strong>Side project · <a class="ext" href="https://github.com/faceless121212/TrackaAI" target="_blank" rel="noopener noreferrer">GitHub</a> · launching soon</li>
         <li><strong>Role</strong>Founder-PM and builder (solo, AI-assisted)</li>
         <li><strong>Timeline</strong>Sep 2026 – now</li>
         <li><strong>Location</strong>Remote</li>
@@ -51,44 +51,39 @@
     <div class="cs-cover" style="margin-top:32px"><img src="../assets/cover-trackaai.webp" alt="A kanban board with a lifted card and a small robot" width="1200" height="675"></div>
     <section class="tldr" aria-labelledby="tldr-title">
       <h2 id="tldr-title">TL;DR</h2>
-      <dl><dt>Problem</dt><dd>Small teams lose time writing tickets, splitting work and triaging boards. Existing trackers bolt AI on as a text box, not as a teammate that does real work.</dd></dl>
-      <dl><dt>My role</dt><dd>Wrote the PRD (goals, non-goals, domain model, plans, success metrics), then built and shipped it with Claude.</dd></dl>
+      <dl><dt>Problem</dt><dd>Small teams lose time writing tickets, splitting work and triaging boards. Linear, Jira, Notion AI and ClickUp AI treat AI as a text box, not as a teammate that does real work.</dd></dl>
+      <dl><dt>My role</dt><dd>Wrote the PRD (goals, non-goals, domain model, plans, success metrics), then built it with Claude. It's a full PRD → pricing → product exercise.</dd></dl>
       <dl><dt>Team</dt><dd>Solo, with AI.</dd></dl>
-      <dl><dt>Outcome</dt><dd>Working product: teams, workspaces, realtime Kanban, five AI features (write, break down, ask, board copilot and AI teammates) and Free/Lite/Pro plans with metered AI runs. <span class="ph">[Add: deployment status and any usage]</span></dd></dl>
+      <dl><dt>Outcome</dt><dd>Working product, launching soon: teams, realtime Kanban boards, five AI features (write, break down, ask, board copilot and AI teammates) and Free / Lite / Pro plans with metered AI runs.</dd></dl>
     </section>
     <section class="cs-section">
       <h2>Context and why it mattered</h2>
-      <p>Linear set the bar for fast, keyboard-first issue tracking. The opportunity was to make AI a real participant on the board, not a text box. The goal was for it to write issues, split them, answer questions about the board, and take assigned work through to review. <span class="ph">[Add: why you built this, e.g. your own pain as a PM]</span></p>
+      <p>I built TrackaAI to show the whole PM chain in one product: a PRD with measurable goals, packaging and pricing, guardrails for AI, and a shipped app. The bet is that AI can be a real participant on the board. It writes issues, splits them, answers questions and takes assigned work through to review.</p>
     </section>
     <section class="cs-section">
       <h2>Discovery and data</h2>
-      <p>The PRD set measurable onboarding goals from day one: a team can sign up, create a team, invite teammates and be working on a board in under 3 minutes.</p><p><span class="ph">[Add: research or competitor analysis behind it: Linear, Jira, Notion AI…]</span></p>
+      <p>Competitive benchmark:</p><ul><li><strong>Linear:</strong> the bar for speed and keyboard-first UX.</li><li><strong>Jira:</strong> powerful, but heavy for small teams.</li><li><strong>Notion AI and ClickUp AI:</strong> AI is bolted onto docs and tasks as a writing helper.</li></ul><p>The gap: nobody treats AI as an <em>assignable teammate</em> with clear permissions and a review step.</p>
     </section>
     <section class="cs-section">
       <h2>Hypotheses and prioritization</h2>
-      <p><span class="ph">[Add: hypothesis, e.g. 'if AI writes the first draft, more tasks get created with acceptance criteria']</span></p>
-<p><strong>What I said no to (v1 non-goals):</strong> native mobile apps and offline mode; cycles, roadmaps, Gantt charts and time tracking; Git integrations, a public API and webhooks; SSO/SAML and audit logs. I also chose simulated billing first, with Stripe to replace it later, so pricing could be tested without payment setup.</p>
+      <p><strong>Hypothesis:</strong> if AI writes the first draft of an issue, more tasks get created with clear acceptance criteria, and teams reach their first board faster.</p>
+<p><strong>What I said no to (v1 non-goals):</strong> native mobile apps and offline mode; cycles, roadmaps, Gantt charts and time tracking; Git integrations, a public API and webhooks; SSO/SAML and audit logs. I also chose simulated billing first, so pricing could be tested before payment setup.</p>
     </section>
     <section class="cs-section">
       <h2>Experiments and execution</h2>
-      <ul><li><strong>Onboarding wizard:</strong> create team → first workspace → invite (skippable) → land on a seeded default board.</li>
-<li><strong>AI with guardrails:</strong> every change the copilot wants to make on the board shows up as a card you approve first. AI acts with the permissions of the person using it, and the AI teammate's work always goes to review.</li>
-<li><strong>Cost-aware models:</strong> a cheap model (Haiku) for writing and breakdowns, and a stronger one (Sonnet) for the copilot and agents. Each request counts as one "AI run" and is metered per plan.</li>
-<li><strong>Packaging:</strong> Free (1 person, 10 runs a month), Lite ($10: 3 people, 100 runs) and Pro ($25: unlimited, copilot and AI teammates).</li>
-<li><strong>Built to swap backends:</strong> a mock data layer shipped first, so the UI could be built before the database. Supabase was then swapped in without UI changes.</li></ul>
+      <ul><li><strong>Onboarding wizard:</strong> create team → first workspace → invite (skippable) → land on a seeded board. The PRD goal is a team working on a board in under 3 minutes.</li><li><strong>AI with guardrails:</strong> every change the copilot wants to make on the board shows up as a card you approve first. AI acts with the permissions of the person using it, and the AI teammate's work always goes to review.</li><li><strong>Cost-aware models:</strong> a cheap model (Haiku) for writing and breakdowns, and a stronger one (Sonnet) for the copilot and agents. Usage is metered per plan in "AI runs".</li><li><strong>Packaging:</strong> Free (1 person, 10 runs a month), Lite ($10: 3 people, 100 runs) and Pro ($25: unlimited, copilot and AI teammates).</li><li><strong>Built to swap backends:</strong> a mock data layer shipped first, so the UI could be built before the database. Supabase was then swapped in without UI changes.</li></ul>
     </section>
     <section class="cs-section">
-      <h2>Results vs. goals</h2>
-      <div class="table-scroll"><table class="results"><thead><tr><th>Success metric (from PRD)</th><th>Result</th><th>Target</th></tr></thead><tbody>
-<tr><td>Sign-up → first task created</td><td><span class="ph">[Add: value]</span></td><td>&lt; 3 min median</td></tr>
-<tr><td>% of new tasks created with AI</td><td><span class="ph">[Add: value]</span></td><td><span class="ph">[Add: target]</span></td></tr>
-<tr><td>Weekly active teams</td><td><span class="ph">[Add: value]</span></td><td><span class="ph">[Add: target]</span></td></tr>
-<tr><td>Free → paid conversion</td><td><span class="ph">[Add: value]</span></td><td><span class="ph">[Add: target]</span></td></tr>
-</tbody></table></div>
+      <h2>Success metrics (from the PRD)</h2>
+      <div class="table-scroll"><table class="results"><thead><tr><th>Metric</th><th>Target</th></tr></thead><tbody>
+<tr><td>Sign-up → first task created</td><td>&lt; 3 min median</td></tr>
+<tr><td>% of new tasks created with AI</td><td>Tracked from launch</td></tr>
+<tr><td>Weekly active teams; free → paid conversion</td><td>Tracked from launch</td></tr>
+</tbody></table></div><p class="muted">Not launched yet, so no results.</p>
     </section>
     <section class="cs-section">
       <h2>What I learned</h2>
-      <p><span class="ph">[Add: lessons, e.g. designing approval steps for AI actions]</span></p>
+      <p>Writing non-goals is as important as writing goals: the v1 list kept a solo build shippable. And AI features need product design, not just prompts. Approval cards, permissions and usage metering are what make AI safe to give to a team.</p>
     </section>
     <a class="next-case" href="nativness.html"><small>Next case study</small><span>Nativness: trust-first affiliate marketplace with escrowed commissions →</span></a>
   </div>

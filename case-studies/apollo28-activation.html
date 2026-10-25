@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tripling activation: 20% → 60% · Illia Ladyha</title>
-  <meta name="description" content="How redesigned onboarding and experiments tripled activation conversion at Apollo28, a consumer VPN browser.">
+  <meta name="description" content="How fixing one drop-off point (the VPN permission prompt) tripled activation and doubled D7 retention at Apollo28, a consumer VPN browser.">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Tripling activation: 20% → 60% · Illia Ladyha">
-  <meta property="og:description" content="How redesigned onboarding and experiments tripled activation conversion at Apollo28, a consumer VPN browser.">
+  <meta property="og:description" content="How fixing one drop-off point (the VPN permission prompt) tripled activation and doubled D7 retention at Apollo28, a consumer VPN browser.">
   <meta property="og:image" content="https://faceless121212.github.io/Portfolio/assets/cover-activation.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://faceless121212.github.io/Portfolio/case-studies/apollo28-activation.html">
@@ -51,41 +51,40 @@
     <div class="cs-cover" style="margin-top:32px"><img src="../assets/cover-activation.webp" alt="A 3D funnel flowing into rising bar chart columns" width="1200" height="675"></div>
     <section class="tldr" aria-labelledby="tldr-title">
       <h2 id="tldr-title">TL;DR</h2>
-      <dl><dt>Problem</dt><dd>Most new users of the VPN browser never reached the core experience: only 20% activated. <span class="ph">[Add: how you defined activation]</span></dd></dl>
+      <dl><dt>Problem</dt><dd>Only 20% of new users activated, meaning they connected to the VPN and browsed in their first session. Most left at the system permission prompt for the VPN.</dd></dl>
       <dl><dt>My role</dt><dd>Product Manager: owned onboarding, experiments, retention strategy and the roadmap for the core browser experience.</dd></dl>
-      <dl><dt>Team</dt><dd>Engineering and design. <span class="ph">[Add: team size and composition]</span></dd></dl>
-      <dl><dt>Outcome</dt><dd>Activation conversion 20% → 60% (3x). Average session duration from under 1 min to 15 min. Retention 2x.</dd></dl>
+      <dl><dt>Team</dt><dd>One product team: 5–8 engineers and 1–2 designers.</dd></dl>
+      <dl><dt>Outcome</dt><dd>Activation 20% → 60% (3x). Average session from under 1 min to 15 min. D7 retention 2x.</dd></dl>
     </section>
     <section class="cs-section">
       <h2>Context and why it mattered</h2>
-      <p>Apollo28 is a consumer VPN browser. In consumer apps, users who don't reach value in the first session rarely come back, so activation was the main constraint on growth. <span class="ph">[Add: business context: acquisition channels, monetization, why now]</span></p>
+      <p>Apollo28 is a freemium VPN browser that makes money from ads, with a paid tier that removes them. In an ad-funded product, revenue follows time spent. A user who never connects and browses in their first session never sees value, never comes back and never earns anything. Activation was the constraint on everything else.</p>
     </section>
     <section class="cs-section">
       <h2>Discovery and data</h2>
-      <p>I started with the funnel: from install, through onboarding, to the first meaningful action in the browser. I looked for the steps where users dropped off.</p>
-<ul><li>Funnel analysis: <span class="ph">[Add: tool used, e.g. Amplitude, and the main funnel steps]</span></li><li>Biggest drop-off point: <span class="ph">[Add: which step, and what share of users left there]</span></li><li>Qualitative signals: <span class="ph">[Add: reviews, interviews, session recordings]</span></li></ul>
+      <p>I defined activation as <strong>connected + browsed</strong>: the user turns on the VPN and visits at least one site in the first session. Then I built the funnel in Amplitude, from install through onboarding and the VPN permission request to the first connection and first site visit.</p>
+<p>The biggest drop-off was the <strong>system permission prompt</strong>. iOS and Android show a technical warning when an app asks to add a VPN configuration, and without any context many users simply backed out.</p>
     </section>
     <section class="cs-section">
       <h2>Hypotheses and prioritization</h2>
-      <p><span class="ph">[Add: hypothesis 1, e.g. 'If we cut X onboarding steps, more users reach Y']</span></p><p><span class="ph">[Add: hypothesis 2]</span></p>
-<p><strong>What I said no to:</strong> <span class="ph">[Add: ideas you deprioritized and why]</span></p>
+      <p><strong>Hypothesis:</strong> if users understand why the app needs the VPN permission before the system prompt appears, more of them will accept it, connect and start browsing.</p>
+<p><strong>What I said no to:</strong></p><ul><li><strong>A full app redesign.</strong> The data pointed to one leak, so we fixed that instead of rebuilding everything.</li><li><strong>New features first.</strong> The feature roadmap waited until activation was fixed, because new features don't help users who never get in.</li><li><strong>An earlier paywall.</strong> Users had to reach value before seeing any upsell.</li></ul>
     </section>
     <section class="cs-section">
       <h2>Experiments and execution</h2>
-      <p>We redesigned onboarding together with engineering and design, then iterated through experiments rather than a single big-bang launch.</p>
-<ul><li><span class="ph">[Add: experiment 1: change, metric, result]</span></li><li><span class="ph">[Add: experiment 2: change, metric, result]</span></li><li>Retention: found the key drop-off points after the first session and shipped fixes that doubled retention. <span class="ph">[Add: which fixes]</span></li></ul>
+      <ul><li><strong>Pre-permission screen:</strong> a short explainer before the system prompt covering what the permission does, why the app needs it and what happens next. This was the main lever for activation.</li><li><strong>Faster first connection:</strong> less time from install to a working connection, so the first session starts with browsing instead of setup.</li><li><strong>Engagement features</strong> that gave users a reason to stay longer in each session.</li><li><strong>Retention:</strong> push reminders for users who didn't return, plus stability fixes for the disconnects and crashes that pushed people away.</li></ul>
     </section>
     <section class="cs-section">
-      <h2>Results vs. goals</h2>
-      <div class="table-scroll"><table class="results"><thead><tr><th>Metric</th><th>Before</th><th>After</th><th>Goal</th></tr></thead><tbody>
-<tr><td>Activation conversion</td><td>20%</td><td>60% (3x)</td><td><span class="ph">[Add: goal]</span></td></tr>
-<tr><td>Average session duration</td><td>&lt; 1 min</td><td>15 min</td><td><span class="ph">[Add: goal]</span></td></tr>
-<tr><td>Retention <span class="ph">[Add: which metric, e.g. D7 or D30]</span></td><td><span class="ph">[Add: before, e.g. 10%]</span></td><td>2x <span class="ph">[Add: after, e.g. 20%]</span></td><td><span class="ph">[Add: goal]</span></td></tr>
+      <h2>Results</h2>
+      <div class="table-scroll"><table class="results"><thead><tr><th>Metric</th><th>Before</th><th>After</th></tr></thead><tbody>
+<tr><td>Activation (connected + browsed)</td><td>20%</td><td><strong>60% (3x)</strong></td></tr>
+<tr><td>Average session duration</td><td>&lt; 1 min</td><td><strong>15 min</strong></td></tr>
+<tr><td>D7 retention</td><td>baseline</td><td><strong>2x</strong></td></tr>
 </tbody></table></div>
     </section>
     <section class="cs-section">
       <h2>What I learned</h2>
-      <p><span class="ph">[Add: 1–3 lessons, e.g. what surprised you in the data]</span></p>
+      <p><strong>Fix the leak first.</strong> One drop-off point mattered more than any feature on the roadmap. Fixing the first session tripled activation, and because more people now understood the product, it also doubled how many came back.</p>
     </section>
     <a class="next-case" href="bvr-pay.html"><small>Next case study</small><span>BVR Pay: 93% payment conversion at 10k+ users →</span></a>
   </div>
