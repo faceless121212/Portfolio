@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sippa: an AI companion app, from pitch to live product · Illia Ladyha</title>
+  <meta name="description" content="How I scoped, built and shipped Sippa, an adults-only AI character chat app with a web quiz funnel, freemium plans and safety by design.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Sippa: an AI companion app, from pitch to live product · Illia Ladyha">
+  <meta property="og:description" content="How I scoped, built and shipped Sippa, an adults-only AI character chat app with a web quiz funnel, freemium plans and safety by design.">
+  <meta property="og:image" content="https://faceless121212.github.io/Portfolio/assets/cover-sippa.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://faceless121212.github.io/Portfolio/case-studies/sippa.html">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23FF7AAC'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='800' font-size='30' fill='%23121117'%3EIL%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-nav">
+  <nav class="wrap" aria-label="Main">
+    <a class="brand" href="../index.html">Illia Ladyha <span>· PM</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html#work">Case studies</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+      <li><a class="btn btn--ink btn--sm" href="../assets/Illia_Ladyha_Resume.pdf" download="Illia_Ladyha_Product_Manager_Resume.pdf">Download resume</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+  <header class="cs-hero">
+    <div class="wrap">
+      <p class="crumbs"><a href="../index.html#work">← All case studies</a></p>
+      <span class="eyebrow">Side project</span>
+      <h1>Sippa: an AI companion app, from pitch to live product</h1>
+      <ul class="cs-meta">
+        <li><strong>Links</strong>Side project · <a class="ext" href="https://sippa-kappa.vercel.app" target="_blank" rel="noopener noreferrer">Live app</a> · <a class="ext" href="https://github.com/faceless121212/Sippa" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><strong>Role</strong>Founder-PM and builder (solo, AI-assisted)</li>
+        <li><strong>Timeline</strong>Sep 2026 – now</li>
+        <li><strong>Location</strong>Remote</li>
+      </ul>
+    </div>
+  </header>
+  <div class="wrap cs-body">
+    <div class="cs-cover" style="margin-top:32px"><img src="../assets/cover-sippa.webp" alt="Two speech bubbles with a small flower on top" width="1200" height="675"></div>
+    <section class="tldr" aria-labelledby="tldr-title">
+      <h2 id="tldr-title">TL;DR</h2>
+      <dl><dt>Problem</dt><dd>People want company, stories and roleplay with AI characters, but most companion apps feel generic and are vague about safety. Sippa had to be engaging and trustworthy at the same time.</dd></dl>
+      <dl><dt>My role</dt><dd>Everything from scope to launch: product decisions (recorded in a decision log), specs, design direction, building with Claude, pricing and the growth funnel.</dd></dl>
+      <dl><dt>Team</dt><dd>Solo, with AI (Claude for code and in-product chat, fal.ai for portraits and quiz images).</dd></dl>
+      <dl><dt>Outcome</dt><dd>Live on Vercel with 60 characters, an AI character creator, chat with memory, three plans (Free, Plus, Ultra) in demo-mode billing, and a 20-question web-to-app quiz funnel per audience. <span class="ph">[Add: real usage: sign-ups, chats, quiz completion rate]</span></dd></dl>
+    </section>
+    <section class="cs-section">
+      <h2>Context and why it mattered</h2>
+      <p>AI companion apps are a fast-growing consumer category, and they monetize through subscriptions and virtual currency. I wanted to show the full product loop I work on every day (acquisition funnel, activation, monetization and retention) in a product I own end to end. <span class="ph">[Add: why you picked this category / what triggered the idea]</span></p>
+    </section>
+    <section class="cs-section">
+      <h2>Discovery and data</h2>
+      <p>I started with competitor and funnel teardowns rather than features.</p>
+<ul><li>Desk research and teardowns of web quiz funnels: Noom, BetterMe, Liven, Lasta, Simple, plus companion apps EVA AI and Replika, and Duolingo for retention.</li>
+<li>Live walk-throughs of BetterMe, Noom and Simple, stopping before any email or payment step.</li>
+<li>Feedback on an early version: the home page mixed romance, friends and history, and the planned ad → quiz → match → paywall → chat flow didn't exist yet. That led to three audience pages and a quiz funnel.</li>
+<li><span class="ph">[Add: user interviews or test sessions, if any, and what you learned]</span></li></ul>
+    </section>
+    <section class="cs-section">
+      <h2>Hypotheses and prioritization</h2>
+      <p><span class="ph">[Add: your main hypothesis, e.g. 'a personalised quiz match raises sign-up-to-first-chat conversion vs. a generic landing page']</span></p>
+<p>From a wider review, I picked 13 funnel ideas: two-pole sliders, reactions from your current best match, a "biggest doubt" screen with an honest answer, a "so far" recap, and a typical-chatbot vs. Sippa comparison screen.</p>
+<p><strong>What I said no to:</strong></p>
+<ul><li>Fake countdown timers, scarcity claims, invented statistics or reviews, and an email gate before the quiz result. These are common in the category but count as unfair practices under EU rules.</li>
+<li>Fake likes on character posts. Other AI characters react instead, shown apart from real likes.</li>
+<li>Social-proof counters before there is real data: they stay hidden until 100 chats and 30 ratings.</li>
+<li>Voice replies (listed as "coming soon"), Apple sign-in, and photoreal portraits of real people.</li>
+<li>Interstitial and mid-chat ads. The free tier only carries one light house ad.</li></ul>
+    </section>
+    <section class="cs-section">
+      <h2>Experiments and execution</h2>
+      <p>I shipped in six phases, stopping after each one for review: landing page, app shell, chat, AI character creator, monetization, then moderation and polish. Engagement mechanics followed: gifts, bond levels, scenes, a daily check-in, a Moments feed and likes.</p>
+<ul><li><strong>Performance:</strong> replacing Framer Motion with plain CSS for the hero animation took mobile Lighthouse performance from 77 to 95+.</li>
+<li><strong>Pricing:</strong> moved from €7.99 to $13.99 for Plus and added Ultra at $29.99 so the site matched the pitch deck. Plan features now come from a single source so pricing pages can't drift apart.</li>
+<li><strong>Funnel hand-off:</strong> the opening line of the chat is pre-written for every character × scene × vibe (720 lines), so the quiz result and the real chat start with exactly the same message.</li>
+<li><strong>Safety by design:</strong> 18+ only, no real living people, always labelled as AI, crisis helplines, and moderation that is automated first with human review.</li></ul>
+    </section>
+    <section class="cs-section">
+      <h2>Results vs. goals</h2>
+      <div class="table-scroll"><table class="results"><thead><tr><th>Metric</th><th>Result</th><th>Goal</th></tr></thead><tbody>
+<tr><td>Quiz start → match screen</td><td><span class="ph">[Add: value]</span></td><td><span class="ph">[Add: goal]</span></td></tr>
+<tr><td>Match → sign-up</td><td><span class="ph">[Add: value]</span></td><td><span class="ph">[Add: goal]</span></td></tr>
+<tr><td>Sign-up → first chat</td><td><span class="ph">[Add: value]</span></td><td><span class="ph">[Add: goal]</span></td></tr>
+<tr><td>Day-1 / Day-7 retention</td><td><span class="ph">[Add: value]</span></td><td><span class="ph">[Add: goal]</span></td></tr>
+<tr><td>Mobile Lighthouse performance</td><td>77 → 95+</td><td>≥ 90</td></tr>
+</tbody></table></div><p class="muted">If Sippa has no real traffic yet, say so here, e.g. "pre-launch, no paid traffic yet".</p>
+    </section>
+    <section class="cs-section">
+      <h2>What I learned</h2>
+      <p><span class="ph">[Add: 1–3 lessons, e.g. what changed your mind during the funnel teardowns]</span></p>
+    </section>
+    <a class="next-case" href="trackaai.html"><small>Next case study</small><span>TrackaAI: a Linear-style tracker with AI teammates →</span></a>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Illia Ladyha</span>
+    <span><a href="mailto:iladyga98@gmail.com">iladyga98@gmail.com</a></span>
+  </div>
+</footer>
+<script src="../assets/main.js" defer></script>
+</body>
+</html>

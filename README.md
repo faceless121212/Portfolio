@@ -46,7 +46,7 @@ Images are converted to WebP with `sharp`. Prompts live at the top of the script
 - **Home page copy:** edit `index.html` directly. Sections are marked with HTML comments.
 - **Case studies:** edit `case-studies/<slug>.html`. Yellow `[Add: …]` badges are placeholders for details
   only you know (hypotheses, goals, team size). Replace them with real content, and never invent numbers.
-- **Product thinking section:** placeholder in `index.html` (`id="thinking"`). Replace it with your project.
+- **Products section:** `index.html` (`id="products"`) plus `case-studies/{sippa,trackaai,nativness,linkit}.html`, built from the GitHub docs.
 - **Company links:** links use `class="ext"` plus `target="_blank" rel="noopener noreferrer"`. Companies without a URL
   (7motiff, AImaginarium, Genesis Academy) are plain text. When you have a URL, swap the text for
   `<a class="ext" href="URL" target="_blank" rel="noopener noreferrer">Name</a>` everywhere it appears.

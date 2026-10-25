@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nativness: trust-first affiliate marketplace with escrowed commissions · Illia Ladyha</title>
+  <meta name="description" content="Designing an affiliate marketplace where the commission budget is locked in escrow before an offer goes live.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Nativness: trust-first affiliate marketplace with escrowed commissions · Illia Ladyha">
+  <meta property="og:description" content="Designing an affiliate marketplace where the commission budget is locked in escrow before an offer goes live.">
+  <meta property="og:image" content="https://faceless121212.github.io/Portfolio/assets/cover-nativness.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://faceless121212.github.io/Portfolio/case-studies/nativness.html">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23FF7AAC'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='800' font-size='30' fill='%23121117'%3EIL%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-nav">
+  <nav class="wrap" aria-label="Main">
+    <a class="brand" href="../index.html">Illia Ladyha <span>· PM</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html#work">Case studies</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+      <li><a class="btn btn--ink btn--sm" href="../assets/Illia_Ladyha_Resume.pdf" download="Illia_Ladyha_Product_Manager_Resume.pdf">Download resume</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+  <header class="cs-hero">
+    <div class="wrap">
+      <p class="crumbs"><a href="../index.html#work">← All case studies</a></p>
+      <span class="eyebrow">Side project</span>
+      <h1>Nativness: trust-first affiliate marketplace with escrowed commissions</h1>
+      <ul class="cs-meta">
+        <li><strong>Links</strong>Side project · <a class="ext" href="https://solanamarketplace.vercel.app" target="_blank" rel="noopener noreferrer">Live prototype</a> · <a class="ext" href="https://github.com/faceless121212/Affiliate-marketplace" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><strong>Role</strong>Founder-PM and builder (solo, AI-assisted)</li>
+        <li><strong>Timeline</strong>Sep 2026</li>
+        <li><strong>Location</strong>Remote</li>
+      </ul>
+    </div>
+  </header>
+  <div class="wrap cs-body">
+    <div class="cs-cover" style="margin-top:32px"><img src="../assets/cover-nativness.webp" alt="A vault with a coin in its slot and a padlock" width="1200" height="675"></div>
+    <section class="tldr" aria-labelledby="tldr-title">
+      <h2 id="tldr-title">TL;DR</h2>
+      <dl><dt>Problem</dt><dd>Affiliates promote offers on a promise. Advertisers can pay late, or not at all. Trust is the bottleneck of affiliate marketing.</dd></dl>
+      <dl><dt>My role</dt><dd>Scoped the product through locked decision tables, wrote the design specs, set the brand system, and built the prototype.</dd></dl>
+      <dl><dt>Team</dt><dd>Solo, with AI.</dd></dl>
+      <dl><dt>Outcome</dt><dd>A live prototype with wallet login (Solana and Ethereum), offers, tracking links, simulated conversions and payouts, plus a landing page and blog. <span class="ph">[Add: validation: affiliates or advertisers you spoke to, and what they said]</span></dd></dl>
+    </section>
+    <section class="cs-section">
+      <h2>Context and why it mattered</h2>
+      <p>The core idea: lock the commission budget in escrow <em>before</em> the offer goes live, so affiliates see a guaranteed balance instead of a promise. A confirmed conversion releases payment to the affiliate's wallet. One wallet login works for both sides. <span class="ph">[Add: where the idea came from]</span></p>
+    </section>
+    <section class="cs-section">
+      <h2>Discovery and data</h2>
+      <p>I took design tokens from the actual reference apps (Jupiter, Velocity and Tensor), sampled live rather than from memory. Proof points on the landing page are qualitative only, apart from market figures shown with their sources. <span class="ph">[Add: market research and target segment]</span></p>
+    </section>
+    <section class="cs-section">
+      <h2>Hypotheses and prioritization</h2>
+      <p><span class="ph">[Add: hypothesis, e.g. 'guaranteed escrow balance increases affiliate sign-up for new advertisers']</span></p>
+<p><strong>What I said no to:</strong> fraud and attribution logic in v1 (I designed where it would plug in, but didn't build it), email and password accounts (the wallet is the account), and a role toggle (both sides are simply destinations in the navigation). I split Phase 2 into five subsystems and put the data layer first, because one spec covering everything would be one nobody could implement.</p>
+    </section>
+    <section class="cs-section">
+      <h2>Experiments and execution</h2>
+      <ul><li><strong>Phase 1:</strong> landing page, wallet login and the marketplace, frontend only, with a repository layer so storage could be swapped later.</li>
+<li><strong>Phase 2a design:</strong> Postgres and an API, Sign-in with Solana (nonce, signature, short-lived session), money stored in integer cents, and idempotency keys on conversions.</li>
+<li><strong>Honesty:</strong> I keep a public record of what is real (wallet address discovery) and what is simulated (escrow balances, conversions, listed offers).</li></ul>
+    </section>
+    <section class="cs-section">
+      <h2>Results vs. goals</h2>
+      <p><span class="ph">[Add: results or validation signals; if none yet, say 'prototype, not yet validated with users']</span></p>
+    </section>
+    <section class="cs-section">
+      <h2>What I learned</h2>
+      <p><span class="ph">[Add: lessons]</span></p>
+    </section>
+    <a class="next-case" href="linkit.html"><small>Next case study</small><span>Linkit: replacing a content spreadsheet with a planning app →</span></a>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Illia Ladyha</span>
+    <span><a href="mailto:iladyga98@gmail.com">iladyga98@gmail.com</a></span>
+  </div>
+</footer>
+<script src="../assets/main.js" defer></script>
+</body>
+</html>

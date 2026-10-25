@@ -212,3 +212,6 @@ a:hover { background: var(--pink-soft); }
 .next-case small { display: block; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: .85rem; }
 .next-case span { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; letter-spacing: -0.02em; }
 .nda-note { background: var(--grey-100); border-left: 4px solid var(--ink); padding: 16px 20px; border-radius: var(--radius-sm); margin: 24px 0; }
+.more { margin-top: 32px; background: var(--white); border-radius: var(--radius); padding: 16px 20px; }
+.more summary { font-weight: 700; cursor: pointer; min-height: 32px; }
+.more ul { margin: 12px 0 0; }

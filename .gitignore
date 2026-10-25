@@ -4,3 +4,4 @@ node_modules/
 scripts/.cache/
 scripts/*.log
 .claude/
+CONTENT_QUESTIONS.md

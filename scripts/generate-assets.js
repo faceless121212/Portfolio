@@ -102,6 +102,11 @@ const COVERS = {
   "cover-payments": "a glossy 3D payment card tilted at an angle with a large rounded checkmark badge floating beside it",
   "cover-onboarding": "a smartphone lying at an angle with a stepped staircase progress path of rounded blocks rising out of its screen",
   "cover-funnels": "a rounded quiz card with multiple choice pill buttons flowing along a curved path into a rounded square app icon",
+  // Side projects
+  "cover-sippa": "two rounded speech bubbles of different sizes floating side by side with a small glossy flower blossom resting on top",
+  "cover-trackaai": "a minimal kanban board of three rounded columns holding small rounded cards, one card lifted up with a tiny friendly round robot head beside it",
+  "cover-nativness": "a rounded vault safe with a glossy coin half inserted into its slot and a small padlock floating beside it",
+  "cover-linkit": "a rounded calendar block with a few pill-shaped post cards stacked in a neat queue in front of it and a small bell",
 };
 
 async function covers() {
