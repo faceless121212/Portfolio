@@ -37,9 +37,9 @@ node scripts/generate-assets.js --force # regenerate everything
 node scripts/generate-assets.js --only=covers --force
 ```
 
-Models: `fal-ai/flux/dev` for images and `fal-ai/kling-video/v2.1/standard/image-to-video` for the hero.
+Models: `fal-ai/recraft/v3/text-to-image` (vector illustration style) for images and `fal-ai/kling-video/v2.1/standard/image-to-video` for the hero.
 The hero is made seamless with a ping-pong loop (3s forward plus 3s reversed) and encoded to MP4 and WebM via `ffmpeg-static`.
-Images are converted to WebP with `sharp`. Prompts live at the top of the script (`STYLE`, `COVERS`, `ACCENTS`).
+Images are converted to WebP with `sharp`. Prompts live in the script (`STYLE`, `HERO_PROMPT`, `COVERS`, `ACCENTS`). Regenerate one image with `--name=cover-sippa`.
 
 ## Edit content
 
