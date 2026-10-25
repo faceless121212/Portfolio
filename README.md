@@ -1,64 +1,68 @@
-# Illia Ladyha · Portfolio
+<a href="https://faceless121212.github.io/Portfolio/"><img src="assets/og-image.jpg" alt="Illia Ladyha, Product Manager, Growth & Activation" width="100%"></a>
 
-Personal portfolio for Illia Ladyha, Product Manager (Growth & Activation).
-Plain HTML + CSS + a few lines of vanilla JS, so there's no build step for the site itself.
+# Illia Ladyha · Product Manager portfolio
 
-**Live:** https://faceless121212.github.io/Portfolio/
+**I turn drop-off into growth: onboarding, activation and payment flows that convert.**
 
-## Structure
+Product Manager for growth and activation across EdTech, consumer apps, fintech and payments.
+Based in Israel, open to on-site, hybrid or remote Senior PM roles.
 
-```
-index.html                  Home: hero, impact, case studies, product thinking, how I work, about, contact
-case-studies/*.html         One page per case study (same template)
-assets/styles.css           All styles (colour tokens at the top)
-assets/main.js              Mobile menu + reduced-motion video fallback
-assets/*.webp|mp4|webm|jpg  Generated visuals (committed)
-assets/Illia_Ladyha_Resume.pdf
-scripts/generate-assets.js  Build-time fal.ai asset generator (never runs in the browser)
-.github/workflows/deploy.yml  Publishes to GitHub Pages on every push to main
-```
+### → [View the portfolio](https://faceless121212.github.io/Portfolio/) · [Download resume](https://faceless121212.github.io/Portfolio/assets/Illia_Ladyha_Resume.pdf)
 
-## Run locally
+---
 
-```bash
-npm run serve        # http://localhost:4321
-```
+## Impact at a glance
 
-## Regenerate visuals with fal.ai
+| | Result | Where |
+|---|---|---|
+| **3x** | Activation 20% → 60% | Apollo28 |
+| **2x** | D7 retention | Apollo28 |
+| **1 → 15 min** | Average session duration | Apollo28 |
+| **93%** | Payment conversion (+5 points) at 10,000+ users | BVR Pay (Fozzy Group) |
+| **91% → 95%** | Acquiring approval rate | VST Bank |
+| **+5%** | Successful registrations through step-by-step onboarding fixes | BVR · VST Bank |
 
-1. `npm install`
-2. `cp .env.example .env` and set `FAL_KEY=...` (get a key at fal.ai → Dashboard → Keys).
-   `.env` is in `.gitignore`. Never commit it, and never reference the key from HTML/JS.
-3. Run:
+## Case studies
 
-```bash
-npm run assets                          # only creates missing files
-node scripts/generate-assets.js --force # regenerate everything
-node scripts/generate-assets.js --only=covers --force
-```
+Each case covers the problem, discovery, hypotheses, what I said no to, execution, results and lessons.
 
-Models: `fal-ai/recraft/v3/text-to-image` (vector illustration style) for images and `fal-ai/kling-video/v2.1/standard/image-to-video` for the hero.
-The hero is made seamless with a ping-pong loop (3s forward plus 3s reversed) and encoded to MP4 and WebM via `ffmpeg-static`.
-Images are converted to WebP with `sharp`. Prompts live in the script (`STYLE`, `HERO_PROMPT`, `COVERS`, `ACCENTS`). Regenerate one image with `--name=cover-sippa`.
+| Case | Company | Outcome |
+|---|---|---|
+| [Tripling activation: 20% → 60%](https://faceless121212.github.io/Portfolio/case-studies/apollo28-activation.html) | Apollo28 | Found the one leak (the VPN permission prompt), fixed it with a pre-permission screen. 3x activation, 2x D7 retention |
+| [BVR Pay: 93% payment conversion](https://faceless121212.github.io/Portfolio/case-studies/bvr-pay.html) | Bank Vlasnyi Rahunok | Silpo e-commerce integration; failures analysed by reason code. 88% → 93% |
+| [Fixing banking onboarding step by step](https://faceless121212.github.io/Portfolio/case-studies/banking-onboarding.html) | BVR · VST Bank | +1–3% at each regulated step, adding up to +5% registrations. Approval rate 91% → 95% |
+| [Web-to-app funnels and paywall experiments](https://faceless121212.github.io/Portfolio/case-studies/web-to-app-funnels.html) | 7motiff (NDA) | Approach and process for quiz funnels, paywall and pricing experiments |
 
-## Edit content
+## Products I've built
 
-- **Home page copy:** edit `index.html` directly. Sections are marked with HTML comments.
-- **Case studies:** edit `case-studies/<slug>.html`. Yellow `[Add: …]` badges are placeholders for details
-  only you know (hypotheses, goals, team size). Replace them with real content, and never invent numbers.
-- **Products section:** `index.html` (`id="products"`) plus `case-studies/{sippa,trackaai,nativness,linkit}.html`, built from the GitHub docs.
-- **Company links:** links use `class="ext"` plus `target="_blank" rel="noopener noreferrer"`. Companies without a URL
-  (7motiff, AImaginarium, Genesis Academy) are plain text. When you have a URL, swap the text for
-  `<a class="ext" href="URL" target="_blank" rel="noopener noreferrer">Name</a>` everywhere it appears.
-- **Photo:** replace the `.photo` placeholder in the About section with
-  `<img src="assets/photo.webp" alt="Illia Ladyha" width="560" height="700">`.
+I'm a PM who builds: I take ideas from a one-line pitch to a live product, with AI as part of the team.
 
-## Replace the resume
+| Product | What it is | Status |
+|---|---|---|
+| [Sippa](https://faceless121212.github.io/Portfolio/case-studies/sippa.html) | AI companion app with a web-to-app quiz funnel and Free / Plus / Ultra plans | [Live](https://sippa-kappa.vercel.app) · 200+ organic users |
+| [TrackaAI](https://faceless121212.github.io/Portfolio/case-studies/trackaai.html) | Linear-style issue tracker with AI teammates that write, split and pick up issues | Launching soon |
+| [Nativness](https://faceless121212.github.io/Portfolio/case-studies/nativness.html) | Affiliate marketplace where commissions are locked in escrow before an offer goes live | [Live prototype](https://solanamarketplace.vercel.app) |
+| [Linkit](https://faceless121212.github.io/Portfolio/case-studies/linkit.html) | Content planner for X posts that replaced my spreadsheet | In personal use |
 
-Overwrite `assets/Illia_Ladyha_Resume.pdf` with your file (keep the same name). Every "Download resume" button
-saves it as `Illia_Ladyha_Product_Manager_Resume.pdf`.
+## How I work
 
-## Deploy
+1. **Find the drop-off first.** Map the funnel and size the leak before choosing ideas.
+2. **Experiment, don't guess.** Every change is a hypothesis with a metric and a decision rule.
+3. **Small steps that compound.** +1–3% per step adds up.
+4. **Ship with engineering and design, not to them.**
 
-Push to `main`. The GitHub Actions workflow publishes to GitHub Pages.
-On the first run, make sure **Settings → Pages → Source** is set to **GitHub Actions**.
+## Toolkit
+
+**Product:** growth funnels and A/B testing, customer journey mapping, market and competitive research, roadmap planning, Scrum
+**Tools:** Amplitude, Google Analytics, Jira / Confluence, Figma, Similarweb / SensorTower
+**AI stack:** Claude, Cursor, Lovable, n8n
+
+## About this site
+
+The portfolio is a product too. It's built to answer three questions in 8 seconds: who I am, what I shipped and which numbers I moved.
+It's plain HTML and CSS with no framework, so it loads fast, works on mobile and is accessible (WCAG AA contrast, keyboard navigation, alt text).
+The illustrations and the hero animation were generated with fal.ai at build time.
+
+## Contact
+
+**Email:** [iladyga98@gmail.com](mailto:iladyga98@gmail.com) · **LinkedIn:** [illia-ladyha](https://www.linkedin.com/in/illia-ladyha) · **GitHub:** [faceless121212](https://github.com/faceless121212)
